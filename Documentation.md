@@ -1,20 +1,5 @@
-# Documentation
-## Project requirements
-**Functional**
-- d
+## 27/02/2026:
 
-**Non-Functional**
-- e
-
-## Design
-**Flowcharts**
-
-
-**Gantt Charts**
-
-## Integration
-
-## Testing & Debugging
-
-## Maintainance
-
+chore: Thought about choosing an API
+chore: Listened to Mr Groom talk about logging
+chore: Moved things to README.md
