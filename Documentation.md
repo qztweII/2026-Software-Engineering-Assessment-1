@@ -22,11 +22,34 @@ Usability and Accessibility: How easy to navigate does the system need to be? Wh
 
 # Documentation
 ## Project requirements
-**Functional**
-- d
+### Functional
+> **Must haves:** 
+> - User can get nutritional information on a particular fruit. 
+> - User can get graphical comparison on fruits on a particular nutrition
+> - User can look up fruits by filtering by nutritions
 
-**Non-Functional**
-- e
+**Should haves:**
+- A search history
+- Graphical user interface with checkboxes, sliders and textboxes
+
+**Could haves:**
+- Data cleaning module (Although the data seems quite clean already)
+- Search Predictor
+- "More like this" section 
+- Theme customisation
+
+**Won't haves:**
+- Adding fruits, even though the API allows it
+
+### Non-functional
+> **Musts:**
+> - User should not be able to see error codes and instead see text corresponding to the error code
+> - Rounded corners GUI
+> - Run on minimal storage and computer power
+
+**Shoulds**
+- GUI should be intuitive; know how to use it upon seeing the front page
+- Data loads and is shown within the second
 
 ## Design
 **Flowcharts**
