@@ -23,10 +23,11 @@ Usability and Accessibility: How easy to navigate does the system need to be? Wh
 # Documentation
 ## Project requirements
 ### Functional
-> **Must haves:** 
+**Must haves:** 
 > - User can get nutritional information on a particular fruit. 
 > - User can get graphical comparison on fruits on a particular nutrition
 > - User can look up fruits by filtering by nutritions
+> - User can compare fruit nutritions
 
 **Should haves:**
 - A search history
@@ -42,7 +43,7 @@ Usability and Accessibility: How easy to navigate does the system need to be? Wh
 - Adding fruits, even though the API allows it
 
 ### Non-functional
-> **Musts:**
+**Musts:**
 > - User should not be able to see error codes and instead see text corresponding to the error code
 > - Rounded corners GUI
 > - Run on minimal storage and computer power
@@ -58,6 +59,8 @@ Usability and Accessibility: How easy to navigate does the system need to be? Wh
 **Gantt Charts**
 
 ## Integration
+
+**Screenshots**
 
 ## Testing & Debugging
 
