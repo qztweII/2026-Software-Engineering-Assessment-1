@@ -12,6 +12,9 @@ def saveSearchHistory(thing):
 def displayData(thing):
 
 
+def addFruitsForCompare():
+
+
 def compareFruits(list):
     
 

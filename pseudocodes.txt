@@ -3,52 +3,40 @@ using = True
 compare_list = []
 wanna_compare = False #This is for the compare feature that is wired back to the search function. 
 WHILE using
-   IF not wanna_compare:
-       type = Ask user for actions
-   ENDIF
-   IF type in ["Fruit Lookup", "Nutrition"] or wanna_compare:
-       request = fruitLookup()
-       IF request not has error:
-           saveSearchHistory(search)
-           Print all of the data line by line
+    type = Ask user for actions
+    IF type in ["fruit", "nutrition"]:
+        request = fruitLookup()
+        IF request not has error:
+            saveSearchHistory(search)
+            displayData(request)
 
-           IF wanna_compare:
-               finished_comparing = Ask user if finished comparing
-               IF finished_comparing:
-                   compareFruits
-           ENDIF
-           ELSE:
-               comparing = Ask user if want to compare
-               IF comparing == "yes":
-                   wanna_compare = True
-               ENDIF
-           ENDELSE
-           
-       ENDIF
-       ELSE:
-           Show an error message
-       ENDELSE
-   ENDIF
-   ELIF type == "Exit":
-       using = False
-   ENDELIF
+            comparing = Ask user if want to compare
+            IF comparing == "yes":
+                compare_list.append(getFruitsForCompare())
+                compareFruits(compare_list)
+                compare_list = [] #Reset the compare list
+            ENDIF
+        ENDIF
+        ELSE:
+            Show an error message
+        ENDELSE
+    ENDIF
+    ELIF type == "Exit":
+        using = False
+    ENDELIF
 ENDWHILE
 END main.py
 
-BEGIN fruitLookup
+BEGIN fruitLookup(type)
 global APILink
-Present choices: Lookup by name, nutritions, or go back
-IF choice == 1: (By name)
+IF type == "name": 
   Ask for fruit name
   Request API
 ENDIF
-ELIF choice == 2: (By nutrition)
+ELIF type == "nutrition": 
   Present choices for nutrition
   Ask for maximum and minimum values of it
   Request API
-ENDELIF
-ELIF choice == 3: (Go back)
-  Return nothing
 ENDELIF
 IF returns multiple fruits:
   Ask user what fruit they want to choose
@@ -60,3 +48,12 @@ ELSE
 ENDELSE
 END fruitLookup
 
+BEGIN saveSearchHistory(thing)
+Open history.txt
+Append thing to history.txt at the beginning
+IF history.txt has more than 200 lines:
+    delete the oldest entry
+Close history.txt
+END saveSearchHistory
+
+BEGIN 
