@@ -14,7 +14,7 @@
 #       ENDIF
 #       request = fruitLookup(search)
 #       IF request not has error:
-#           saveSearchHistory
+#           saveSearchHistory(search)
 #           Print all of the data line by line
 #
 #           IF wanna_compare:
