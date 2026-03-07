@@ -26,8 +26,8 @@ Usability and Accessibility: How easy to navigate does the system need to be? Wh
 **Must haves:** 
 > - User can get nutritional information on a particular fruit. 
 > - User can get graphical comparison on fruits on a particular nutrition
-> - User can look up fruits by filtering by nutritions
-> - User can compare fruit nutritions
+> - User can look up fruits by filtering by nutrition
+> - User can select and compare fruit by nutrition
 
 **Should haves:**
 - A search history
@@ -72,7 +72,7 @@ Usability and Accessibility: How easy to navigate does the system need to be? Wh
 |nutritions.sugar        |Number|8 B          |Sugar content per 100g (g)        |10.3      |
 |nutritions.carbohydrates|Number|8 B          |Carbohydrates per 100g (g)        |11.4      |
 |nutritions.protein      |Number|8 B          |Protein per 100g (g)              |0.3       |
-*Used in optional features*
+*Used in optional features that may not be implemented*
 |family                  |String|8 B          |Botanical family                  |"Rosaceae"|
 |order                   |String|7 B          |Botanical order                   |"Rosales" |
 |genus                   |String|5 B          |Botanical genus                   |"Malus"   |
