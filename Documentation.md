@@ -72,10 +72,10 @@ Usability and Accessibility: How easy to navigate does the system need to be? Wh
 |nutritions.sugar        |Number|8 B          |Sugar content per 100g (g)        |10.3      |
 |nutritions.carbohydrates|Number|8 B          |Carbohydrates per 100g (g)        |11.4      |
 |nutritions.protein      |Number|8 B          |Protein per 100g (g)              |0.3       |
+*Used in optional features*
 |family                  |String|8 B          |Botanical family                  |"Rosaceae"|
 |order                   |String|7 B          |Botanical order                   |"Rosales" |
 |genus                   |String|5 B          |Botanical genus                   |"Malus"   |
-|==== Used in optional features ====	
 
 ## Integration
 

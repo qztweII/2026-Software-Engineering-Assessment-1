@@ -1,4 +1,4 @@
-#Import all of the various script files
+from functions import *
 #BEGIN main.py
 #using = True
 #compare_list = []
