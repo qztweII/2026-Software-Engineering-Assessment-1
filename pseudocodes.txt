@@ -1,0 +1,62 @@
+BEGIN main.py
+using = True
+compare_list = []
+wanna_compare = False #This is for the compare feature that is wired back to the search function. 
+WHILE using
+   IF not wanna_compare:
+       type = Ask user for actions
+   ENDIF
+   IF type in ["Fruit Lookup", "Nutrition"] or wanna_compare:
+       request = fruitLookup()
+       IF request not has error:
+           saveSearchHistory(search)
+           Print all of the data line by line
+
+           IF wanna_compare:
+               finished_comparing = Ask user if finished comparing
+               IF finished_comparing:
+                   compareFruits
+           ENDIF
+           ELSE:
+               comparing = Ask user if want to compare
+               IF comparing == "yes":
+                   wanna_compare = True
+               ENDIF
+           ENDELSE
+           
+       ENDIF
+       ELSE:
+           Show an error message
+       ENDELSE
+   ENDIF
+   ELIF type == "Exit":
+       using = False
+   ENDELIF
+ENDWHILE
+END main.py
+
+BEGIN fruitLookup
+global APILink
+Present choices: Lookup by name, nutritions, or go back
+IF choice == 1: (By name)
+  Ask for fruit name
+  Request API
+ENDIF
+ELIF choice == 2: (By nutrition)
+  Present choices for nutrition
+  Ask for maximum and minimum values of it
+  Request API
+ENDELIF
+ELIF choice == 3: (Go back)
+  Return nothing
+ENDELIF
+IF returns multiple fruits:
+  Ask user what fruit they want to choose
+IF API returned error:
+  RETURN a dictionary of error and what type of error
+ENDIF
+ELSE
+  RETURN a dictionary of the fruit(s) and its attributes
+ENDELSE
+END fruitLookup
+
