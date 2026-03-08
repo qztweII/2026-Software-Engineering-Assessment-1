@@ -3,8 +3,8 @@ using = True
 compare_list = []
 wanna_compare = False #This is for the compare feature that is wired back to the search function. 
 WHILE using
-    type = Ask user for actions
-    IF type in ["fruit", "nutrition"]:
+    type = userChoose(fruit, nutrition, exit)
+    IF type in [1, 2]:
         request = fruitLookup()
         IF request not has error:
             saveSearchHistory(search)
@@ -21,7 +21,7 @@ WHILE using
             Show an error message
         ENDELSE
     ENDIF
-    ELIF type == "Exit":
+    ELIF type == 3:
         using = False
     ENDELIF
 ENDWHILE
@@ -29,22 +29,23 @@ END main.py
 
 BEGIN fruitLookup(type)
 global APILink
-IF type == "name": 
-  Ask for fruit name
-  Request API
+IF type == 1: #Name
+    Ask for fruit name
+    Request API
 ENDIF
-ELIF type == "nutrition": 
-  Present choices for nutrition
-  Ask for maximum and minimum values of it
-  Request API
+ELIF type == 2: #Nutrition
+    Present choices for nutrition
+    Ask for maximum and minimum values of it
+    Request API
 ENDELIF
-IF returns multiple fruits:
-  Ask user what fruit they want to choose
+IF returns multiple fruits: 
+    userChoose(which fruits)
 IF API returned error:
-  RETURN a dictionary of error and what type of error
+    RETURN a dictionary of error and what type of error
 ENDIF
 ELSE
-  RETURN a dictionary of the fruit(s) and its attributes
+    saveSearchHistory(the fruit requested or nutrition requested)
+    RETURN a dictionary of the fruit(s) and its attributes
 ENDELSE
 END fruitLookup
 
@@ -56,4 +57,23 @@ IF history.txt has more than 200 lines:
 Close history.txt
 END saveSearchHistory
 
-BEGIN 
+BEGIN compareFruits(list)
+using = True
+WHILE using:
+    choice = userChoose(nutrition choices)
+    fruits = a list of the fruits selected
+    nutrition = list[fruits][nutrition choice]
+    make a bar graph
+    wait for bar graph to be closed
+END compareFruits
+
+BEGIN getFruitsForCompare()
+list of fruits = []
+using = True
+WHILE using:
+    fruit = fruitLookup(1)
+    if fruit not an error:
+        list of fruits.append(fruit)
+RETURN the list of fruits
+END getFruitsForCompare
+
