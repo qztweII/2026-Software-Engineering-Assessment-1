@@ -53,6 +53,9 @@ Usability and Accessibility: How easy to navigate does the system need to be? Wh
 - Data loads and is shown within the second
 
 ## Design
+**Structure Chart**
+![Structure Chart](md_images/Structure%20chart.jpg)
+
 **Flowcharts**
 
 [Flowchart link](https://miro.com/app/board/uXjVG2q2jSU=/?share_link_id=23078941805)
