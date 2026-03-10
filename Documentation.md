@@ -80,6 +80,17 @@ Usability and Accessibility: How easy to navigate does the system need to be? Wh
 |order                   |String|7 B          |Botanical order                   |"Rosales" |
 |genus                   |String|5 B          |Botanical genus                   |"Malus"   |
 
+**GUI designs**
+![Front page](md_images/GUI%20design%201.png)
+Front page
+
+![Searched something up](md_images/GUI%20design%202.png)
+After user has searched something up
+
+![Comparing screen](md_images/GUI%20design%203.png)
+Screen for comparison
+
+
 ## Integration
 
 **Screenshots**
