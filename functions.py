@@ -19,14 +19,15 @@ def choices(list, query):
     return list[choice]
         
 
-def fruitLookup(type):
+def fruitLookup(want):
     global APILink
-    if type == "Name": 
+    if want == "Name": 
         fruit = input("Search fruits: ")
         fruit_data = requests.get(f"{APILink}{fruit}")
-    elif type == "Nutrition": 
-        nutritions = ["Calories", "Fat", "Sugar", "Carbohydrates", "Protein"]
-        nutrition = choices(nutritions)
+        fruit_data = fruit_data.json()
+    elif want == "Nutrition": 
+        nutritions = ["calories", "fat", "sugar", "carbohydrates", "protein"]
+        nutrition = choices(nutritions, "Choose nutrient: ")
         while True:
             try:
                 min = int(input("Minimum amount of nutrition? "))
@@ -41,30 +42,38 @@ def fruitLookup(type):
                 print("Please choose a number")
             else:
                 break
-        fruit_data = requests.get(f"{APILink}{nutrition}?min={min}&max={max}")
-    if not "error" in fruit_data[0].keys(): 
-        if len(fruit_data) > 1:
-            names = []
-            for i in requests:
-                names.append(i["name"])
-            fruit_chosen = choices(names, "Which fruit do you want to choose?")
-            for i in range(len(fruit_data)):
-                if fruit_data["name"] != fruit_chosen:
-                    del fruit_data[i]
+        test = f"{APILink}{nutrition}?min={min}&max={max}" #DEBUGGING
+        print(test)
+        fruit_data = requests.get(test)
+        fruit_data = fruit_data.json()
+        print(fruit_data)
+        if not type(fruit_data) == "dict": #Errors come as a dict
+            if len(fruit_data) > 1:
+                names = []
+                for i in fruit_data:
+                    names.append(i["name"])
+                fruit_chosen = choices(names, "Which fruit do you want to choose?")
+                for i in range(len(fruit_data)): #Get rid of everything that is not the fruit I want
+                    if fruit_data[i]["name"] != fruit_chosen:
+                        fruit_data[i] = "None"
+                fruit_data = [n for n in fruit_data if n != "None"] #Actually gets rid of it
             fruit_data = fruit_data[0] #Turn fruit_data into dictionary from dictionary in list
-    
     return fruit_data
 
 def saveSearchHistory(thing):
+    pass
 
 
 def displayData(thing):
+    pass
 
 
 def addFruitsForCompare():
+    pass
 
 
 def compareFruits(list):
+    pass
     
 
 # def moreLikeThis(thing):
@@ -73,3 +82,5 @@ def compareFruits(list):
 # def customiseGUI():
 
 
+if __name__ == "__main__":
+    print(fruitLookup("Nutrition"))
