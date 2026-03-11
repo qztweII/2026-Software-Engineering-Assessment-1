@@ -42,8 +42,7 @@ def fruitLookup(want):
                 print("Please choose a number")
             else:
                 break
-        test = f"{APILink}{nutrition}?min={min}&max={max}" #DEBUGGING
-        print(test)
+        test = f"{APILink}{nutrition}?min={min}&max={max}"
         fruit_data = requests.get(test)
         fruit_data = fruit_data.json()
         print(fruit_data)
@@ -57,7 +56,7 @@ def fruitLookup(want):
                     if fruit_data[i]["name"] != fruit_chosen:
                         fruit_data[i] = "None"
                 fruit_data = [n for n in fruit_data if n != "None"] #Actually gets rid of it
-            fruit_data = fruit_data[0] #Turn fruit_data into dictionary from dictionary in list
+                fruit_data = fruit_data[0] #Turn fruit_data into dictionary from dictionary in list
     return fruit_data
 
 def saveSearchHistory(thing):
