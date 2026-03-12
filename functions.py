@@ -1,10 +1,12 @@
 import requests
-#import matplotlib
+import numpy as np #I think matplotlib needs numpy
+import matplotlib.pyplot as plt
 import json
 
 APILink = "https://fruityvice.com/api/fruit/"
 
 def choices(list, query):
+    '''Just makes inputs cleaner'''
     for i in range(len(list)):
         print(f"[{i}] {list[i]}")
     while True:
@@ -20,6 +22,7 @@ def choices(list, query):
     return list[choice]
         
 def saveSearchHistory(thing):
+    '''Saving search history into a json file'''
     with open("history.json", "r") as f:
         lines = f.read()
         if len(lines) == 0:
@@ -34,12 +37,14 @@ def saveSearchHistory(thing):
         f.write(lines)
 
 def readSearchHistory():
+    '''Loads the search history'''
     with open("history.json", "r") as f:
         history = json.loads(f)
     
     return history
 
 def fruitLookup(want):
+    '''Look up fruits by name or filtering and choosing by nutritional value'''
     global APILink
     if want == "Name": 
         fruit = input("Search fruits: ")
@@ -94,6 +99,7 @@ def fruitLookup(want):
 
 
 def displayData(thing):
+    '''Prints fruit data nicer'''
     for i in thing:
         if i == "nutritions":
             for j in thing[i]:
@@ -103,11 +109,37 @@ def displayData(thing):
 
 
 def addFruitsForCompare():
-    pass
+    '''Function for user to add fruits to compare them'''
+    list_of_fruits = []
+    using = True
+    while using:
+        fruit = fruitLookup(choices(["Name", "Nutrition"], "What fruit do you want to add to compare? "))
+        if not "error" in fruit:
+            list_of_fruits.append(fruit)
+            print(f"Oh no! {fruit['error']}")
+        if choices(["Yes", "No"], "Do you want to keep adding fruits for compare? ") == "No":
+            using = False
+    return list_of_fruits #This should return a list of dictionaries. May get messy?
 
 
 def compareFruits(list):
-    pass
+    '''Graphs the fruits by nutritional value'''
+    using = True
+    while using:
+        choice = choices(["Calories", "Fat", "Sugar", "Carbohydrates", "Protein"]).lower() #Capitalising here just makes the UI look prettier
+        nutrition = []
+        for i in list:
+            nutrition.append(i["nutrition"][choice])
+        fruits = []
+        for j in list:
+            fruits.append(i["name"])
+
+        #AAAAAAAAAA GRAPHING!!!!!! AAAAAAAAAAAA
+        plt.bar(fruits, nutrition)
+        plt.title(f"Fruits by {choice}")
+        plt.xlabel("Fruits")
+        plt.ylabel(choice)
+        plt.show()
     
 
 # def moreLikeThis(thing):
@@ -117,6 +149,8 @@ def compareFruits(list):
 
 
 if __name__ == "__main__":
-    fruit = fruitLookup("Nutrition")
+    fruit = fruitLookup("Name")
     if not "error" in fruit:
         displayData(fruit)
+    else:
+        print(f"Oh no! {fruit['error']}")
