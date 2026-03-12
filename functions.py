@@ -67,7 +67,7 @@ def fruitLookup(want):
         test = f"{APILink}{nutrition}?min={min}&max={max}"
         fruit_data = requests.get(test)
         fruit_data = fruit_data.json()
-    if not type(fruit_data) == "dict": #Errors come as dictionaries
+    if not "error" in fruit_data: 
         if len(fruit_data) > 1: #If a list of fruits come in
             names = []
             for i in fruit_data:
@@ -82,7 +82,11 @@ def fruitLookup(want):
             saveSearchHistory({"type":"Nutrition", "nutrition":nutrition, "max": max, "min": min})
         else:
             saveSearchHistory({"type":"Name", "name":fruit})
-
+        
+        del fruit_data["id"]
+        del fruit_data["family"]
+        del fruit_data["order"]
+        del fruit_data["genus"]
 
     return fruit_data
 
@@ -90,7 +94,12 @@ def fruitLookup(want):
 
 
 def displayData(thing):
-    pass
+    for i in thing:
+        if i == "nutritions":
+            for j in thing[i]:
+                print(f"{j.capitalize()} : {thing[i][j]}")
+        else:
+            print(f"{i.capitalize()} : {thing[i]}")
 
 
 def addFruitsForCompare():
@@ -108,4 +117,6 @@ def compareFruits(list):
 
 
 if __name__ == "__main__":
-    print(fruitLookup("Nutrition"))
+    fruit = fruitLookup("Nutrition")
+    if not "error" in fruit:
+        displayData(fruit)
