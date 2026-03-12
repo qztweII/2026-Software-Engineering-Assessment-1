@@ -108,9 +108,11 @@ def displayData(thing):
             print(f"{i.capitalize()} : {thing[i]}")
 
 
-def addFruitsForCompare():
+def addFruitsForCompare(fruit=None):
     '''Function for user to add fruits to compare them'''
     list_of_fruits = []
+    if fruit != None:
+        list_of_fruits.append(fruit)
     using = True
     while using:
         fruit = fruitLookup(choices(["Name", "Nutrition"], "What fruit do you want to add to compare? "))
@@ -154,3 +156,5 @@ if __name__ == "__main__":
         displayData(fruit)
     else:
         print(f"Oh no! {fruit['error']}")
+
+    compareFruits(addFruitsForCompare(fruit))
