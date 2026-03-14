@@ -39,7 +39,7 @@ def saveSearchHistory(thing):
 def readSearchHistory():
     '''Loads the search history'''
     with open("history.json", "r") as f:
-        history = json.loads(f)
+        history = json.load(f)
     
     return history
 
