@@ -115,26 +115,30 @@ def addFruitsForCompare(fruit=None):
         list_of_fruits.append(fruit)
     using = True
     while using:
-        fruit = fruitLookup(choices(["Name", "Nutrition"], "What fruit do you want to add to compare? "))
+        fruit = fruitLookup(choices(["Name", "Nutrition"], "How do you want to search your next fruit? "))
         if not "error" in fruit:
             list_of_fruits.append(fruit)
+            print(fruit["name"])
+        else:
             print(f"Oh no! {fruit['error']}")
         if choices(["Yes", "No"], "Do you want to keep adding fruits for compare? ") == "No":
             using = False
-    return list_of_fruits #This should return a list of dictionaries. May get messy?
+    return list_of_fruits #This should return a list of dictionaries. 
 
 
 def compareFruits(list):
     '''Graphs the fruits by nutritional value'''
     using = True
     while using:
-        choice = choices(["Calories", "Fat", "Sugar", "Carbohydrates", "Protein"]).lower() #Capitalising here just makes the UI look prettier
+        choice = choices(["Calories", "Fat", "Sugar", "Carbohydrates", "Protein", "Exit"], "What nutrition do you want to compare by? ").lower() #Capitalising here just makes the UI look prettier
+        if choice == "Exit":
+            break
         nutrition = []
         for i in list:
-            nutrition.append(i["nutrition"][choice])
+            nutrition.append(i["nutritions"][choice])
         fruits = []
         for j in list:
-            fruits.append(i["name"])
+            fruits.append(j["name"])
 
         #AAAAAAAAAA GRAPHING!!!!!! AAAAAAAAAAAA
         plt.bar(fruits, nutrition)
@@ -151,6 +155,7 @@ def compareFruits(list):
 
 
 if __name__ == "__main__":
+    #This algorithm requires happypath
     fruit = fruitLookup("Name")
     if not "error" in fruit:
         displayData(fruit)
