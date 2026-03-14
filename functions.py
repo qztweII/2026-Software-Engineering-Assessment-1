@@ -5,7 +5,7 @@ import json
 
 APILink = "https://fruityvice.com/api/fruit/"
 
-def choices(list, query):
+def choices(list, query, numerical=False):
     '''Just makes inputs cleaner'''
     for i in range(len(list)):
         print(f"[{i}] {list[i]}")
@@ -19,7 +19,10 @@ def choices(list, query):
             print("Please choose an option within the above list")
         else:
             break
-    return list[choice]
+    if numerical:
+        return choice
+    else:
+        return list[choice]
         
 def saveSearchHistory(thing):
     '''Saving search history into a json file'''
