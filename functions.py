@@ -47,7 +47,7 @@ def readSearchHistory():
     return history
 
 def fruitLookup(want):
-    '''Look up fruits by name or filtering and choosing by nutritional value'''
+    '''Look up fruits by name or filtering and choosing by nutritional value. Choose "Name" or "Nutrition". '''
     global APILink
     if want == "Name": 
         fruit = input("Search fruits: ")
