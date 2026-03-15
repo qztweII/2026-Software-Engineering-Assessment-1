@@ -114,7 +114,7 @@ def displayData(thing):
 
 
 def addFruitsForCompare(fruit=None):
-    '''Function for user to add fruits to compare them'''
+    '''Function for user to add fruits to compare them. Deprecated'''
     list_of_fruits = []
     if fruit != None:
         list_of_fruits.append(fruit)
