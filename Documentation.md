@@ -74,5 +74,11 @@ Screen for comparison
 **Screenshots**
 
 ## Testing & Debugging
+### Test of 15/3/2026
+#### First test & debug
+Bugs:
+- When searching, if it does not return a value, it crashes at line 20
+- Must add in a dedicated compare fruits selection
+- Doesn't access compare fruits feature at all
 
 ## Maintainance
