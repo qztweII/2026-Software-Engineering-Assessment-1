@@ -19,6 +19,8 @@ def choices(list, query, numerical=False):
             print("Please choose an option within the above list")
         else:
             break
+        finally:
+            print('==========================================')
     if numerical:
         return choice
     else:
