@@ -16,7 +16,7 @@ while using:
                 compare_list.append(request)
                 print(compare_list)
         else:
-            print(f"Oh no! {mode['error']}")
+            print(f"Oh no! {request['error']}")
     
     elif mode == "Compare fruits":
         if len(compare_list) != 0:
