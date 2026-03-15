@@ -22,28 +22,45 @@
 
 ### Non-functional
 **Musts:**
-> - User should not be able to see error codes and instead see text corresponding to the error code
-> - Rounded corners GUI
+> - Elegant error handling; user should not see tracebacks
 > - Run on minimal storage and computer power
 
 **Shoulds**
 - GUI should be intuitive; know how to use it upon seeing the front page
+- Rounded corners GUI
 - Data loads and is shown within the second plus request time
 
 ## Design
-**Structure Chart**
+### Structure Chart
+<details>
+<summary>Structure chart</summary>
 ![Structure Chart](md_images/Structure%20chart.jpg)
+</details>
 
-**Flowcharts**
+### Flowchart
 
-[Flowchart link](https://miro.com/app/board/uXjVG2q2jSU=/?share_link_id=23078941805)
+[Flowchart link (recommended)](https://miro.com/app/board/uXjVG2q2jSU=/?share_link_id=23078941805)
+
+<details>
+<summary>Flowchart as an image</summary>
+
 (Dotted borders indicate features that may or may not be included)
+![Flowchart as a picture](md_images/Flowchart.jpg)
+</details>
 
 
-**Gantt Charts**
+
+### Gantt Charts
+<details>
+<summary>Gantt chart</summary>
+
 ![Gantt Chart](md_images/GanttChart.png)
+</details>
 
-**Data Table**
+### Data Table
+<details>
+<summary>Data table</summary>
+
 |Variable                |Type  |Size in Bytes| Description                      |Example	|
 |------------------------|------|-------------|----------------------------------|----------|
 |name                    |String|5 B          |Common name of the fruit          |"Apple"   |
@@ -57,8 +74,12 @@
 |family                  |String|8 B          |Botanical family                  |"Rosaceae"|
 |order                   |String|7 B          |Botanical order                   |"Rosales" |
 |genus                   |String|5 B          |Botanical genus                   |"Malus"   |
+</details>
 
-**GUI designs**
+### GUI designs (unimplemented for now)
+<details>
+<summary>GUI designs</summary>
+
 ![Front page](md_images/GUI%20design%201.png)
 Front page
 
@@ -67,6 +88,7 @@ After user has searched something up
 
 ![Comparing screen](md_images/GUI%20design%203.png)
 Screen for comparison
+</details>
 
 
 ## Integration
