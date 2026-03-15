@@ -136,7 +136,7 @@ def compareFruits(list):
     using = True
     while using:
         choice = choices(["Calories", "Fat", "Sugar", "Carbohydrates", "Protein", "Exit"], "What nutrition do you want to compare by? ").lower() #Capitalising here just makes the UI look prettier
-        if choice == "Exit":
+        if choice == "exit":
             break
         nutrition = []
         for i in list:
