@@ -7,6 +7,7 @@ APILink = "https://fruityvice.com/api/fruit/"
 
 def choices(list, query, numerical=False):
     '''Just makes inputs cleaner'''
+    print()
     for i in range(len(list)):
         print(f"[{i}] {list[i]}")
     while True:
@@ -20,7 +21,7 @@ def choices(list, query, numerical=False):
         else:
             break
         finally:
-            print('==========================================')
+            print()
     if numerical:
         return choice
     else:
