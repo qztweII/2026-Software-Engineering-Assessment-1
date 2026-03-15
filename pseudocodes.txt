@@ -77,3 +77,9 @@ WHILE using:
 RETURN the list of fruits
 END getFruitsForCompare
 
+BEGIN exploreMore(thing)
+global API link
+get thing id
+request API with thing but id + 1
+request API with thing but id - 1
+return the two items

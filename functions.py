@@ -2,6 +2,7 @@ import requests
 import numpy as np #I think matplotlib needs numpy
 import matplotlib.pyplot as plt
 import json
+from random import randint
 
 APILink = "https://fruityvice.com/api/fruit/"
 
@@ -49,32 +50,36 @@ def readSearchHistory():
     
     return history
 
-def fruitLookup(want):
+def fruitLookup(want, search=None):
     '''Look up fruits by name or filtering and choosing by nutritional value. Choose "Name" or "Nutrition". '''
     global APILink
     if want == "Name": 
-        fruit = input("Search fruits: ")
+        if search == None:
+            fruit = input("Search fruits: ")
+        else:
+            fruit = search
         fruit_data = requests.get(f"{APILink}{fruit}")
         fruit_data = fruit_data.json()
         if not "error" in fruit_data:
             fruit_data = [fruit_data]
     elif want == "Nutrition": 
         nutritions = ["calories", "fat", "sugar", "carbohydrates", "protein"]
-        nutrition = choices(nutritions, "Choose nutrient: ")
-        while True:
-            try:
-                min = int(input("Minimum amount of nutrition? "))
-            except:
-                print("Please choose a number")
-            else:
-                break
-        while True:
-            try:
-                max = int(input("Maximum amount of nutrition? "))
-            except:
-                print("Please choose a number")
-            else:
-                break
+        if search == None:
+            nutrition = choices(nutritions, "Choose nutrient: ")
+            while True:
+                try:
+                    min = int(input("Minimum amount of nutrition? "))
+                except:
+                    print("Please choose a number")
+                else:
+                    break
+            while True:
+                try:
+                    max = int(input("Maximum amount of nutrition? "))
+                except:
+                    print("Please choose a number")
+                else:
+                    break
         test = f"{APILink}{nutrition}?min={min}&max={max}"
         fruit_data = requests.get(test)
         fruit_data = fruit_data.json()
@@ -94,7 +99,6 @@ def fruitLookup(want):
         else:
             saveSearchHistory({"type":"Name", "name":fruit})
         
-        del fruit_data["id"]
         del fruit_data["family"]
         del fruit_data["order"]
         del fruit_data["genus"]
@@ -154,7 +158,21 @@ def compareFruits(list):
         plt.show()
     
 
-# def moreLikeThis(thing):
+def exploreMore(thing):
+    '''calls API for fruits of ±1 id'''
+    global APILink
+    id = thing['id']
+    more_like_this = []
+    for i in range(-1, 2, 2):
+        fruit = requests.get(f"{APILink}{id + 1}")
+        if "error" in fruit:
+            fruit = requests.get(f"{APILink}{id + 2}")
+            if "error" in fruit:
+                fruit = requests.get(f"{APILink}{id - 2}")
+        print(fruit)
+        more_like_this.append(fruit)
+    return more_like_this
+
 
 
 # def customiseGUI():

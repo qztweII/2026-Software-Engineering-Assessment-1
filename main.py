@@ -14,6 +14,8 @@ while using:
             comparing = choices(["Yes", "No"], "Do you want to add to compare?")
             if comparing == "Yes":
                 compare_list.append(request)
+            print()
+            print(exploreMore(request))
         else:
             print(f"Oh no! {request['error']}")
     
