@@ -64,16 +64,13 @@
 |Variable                |Type  |Size in Bytes| Description                      |Example	|
 |------------------------|------|-------------|----------------------------------|----------|
 |name                    |String|5 B          |Common name of the fruit          |"Apple"   |
+|id                      |Number|2 B          |ID number of fruit in API         |6         |
 |nutritions              |Dict  |40 B         |Nutritional information container |{...}     |
 |nutritions.calories     |Number|8 B          |Energy content per 100g           |52        |
 |nutritions.fat          |Number|8 B          |Fat content per 100g (g)          |0.4       |
 |nutritions.sugar        |Number|8 B          |Sugar content per 100g (g)        |10.3      |
 |nutritions.carbohydrates|Number|8 B          |Carbohydrates per 100g (g)        |11.4      |
 |nutritions.protein      |Number|8 B          |Protein per 100g (g)              |0.3       |
-*Used in optional features that may not be implemented*
-|family                  |String|8 B          |Botanical family                  |"Rosaceae"|
-|order                   |String|7 B          |Botanical order                   |"Rosales" |
-|genus                   |String|5 B          |Botanical genus                   |"Malus"   |
 </details>
 
 ### GUI designs (unimplemented for now)
