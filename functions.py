@@ -159,15 +159,14 @@ def compareFruits(list):
 
 def exploreMore(thing):
     '''calls API for fruits of ±1 id'''
+    print("Loading...")
     global APILink
     id = thing['id']
     more_like_this = []
     for i in range(-1, 2, 2):
         fruit = fruitLookup("Name", (id + i))
         if "error" in fruit:
-            fruit = fruitLookup("Name", (id + 2))
-            if "error" in fruit:
-                fruit = fruitLookup("Name", (id - 2))
+            fruit = fruitLookup("Name", (id + i + i))
         more_like_this.append(fruit)
     return more_like_this
 
