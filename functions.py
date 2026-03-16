@@ -49,7 +49,7 @@ def readSearchHistory():
     
     return history
 
-def fruitLookup(want, search=None):
+def fruitLookup(want, search=None, save=True):
     '''Look up fruits by name or filtering and choosing by nutritional value. Choose "Name" or "Nutrition". '''
     global APILink
     if want == "Name": 
@@ -93,10 +93,11 @@ def fruitLookup(want, search=None):
                     fruit_data[i] = "None"
             fruit_data = [n for n in fruit_data if n != "None"] #Actually gets rid of it
         fruit_data = fruit_data[0] #Turn fruit_data into dictionary from dictionary in list
-        if want == "Nutrition":
-            saveSearchHistory({"type":"Nutrition", "nutrition":nutrition, "max": max, "min": min})
-        else:
-            saveSearchHistory({"type":"Name", "name":fruit})
+        if save:
+            if want == "Nutrition":
+                saveSearchHistory({"type":"Nutrition", "nutrition":nutrition, "max": max, "min": min})
+            else:
+                saveSearchHistory({"type":"Name", "name":fruit})
         
         del fruit_data["family"]
         del fruit_data["order"]
@@ -164,9 +165,9 @@ def exploreMore(thing):
     id = thing['id']
     more_like_this = []
     for i in range(-1, 2, 2):
-        fruit = fruitLookup("Name", (id + i))
+        fruit = fruitLookup("Name", (id + i), False)
         if "error" in fruit:
-            fruit = fruitLookup("Name", (id + i + i))
+            fruit = fruitLookup("Name", (id + i + i), False)
         more_like_this.append(fruit)
     return more_like_this
 
