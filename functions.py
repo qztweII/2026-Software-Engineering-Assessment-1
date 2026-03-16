@@ -2,7 +2,6 @@ import requests
 import numpy as np #I think matplotlib needs numpy
 import matplotlib.pyplot as plt
 import json
-from random import randint
 
 APILink = "https://fruityvice.com/api/fruit/"
 
@@ -164,12 +163,11 @@ def exploreMore(thing):
     id = thing['id']
     more_like_this = []
     for i in range(-1, 2, 2):
-        fruit = requests.get(f"{APILink}{id + 1}")
+        fruit = fruitLookup("Name", (id + i))
         if "error" in fruit:
-            fruit = requests.get(f"{APILink}{id + 2}")
+            fruit = fruitLookup("Name", (id + 2))
             if "error" in fruit:
-                fruit = requests.get(f"{APILink}{id - 2}")
-        print(fruit)
+                fruit = fruitLookup("Name", (id - 2))
         more_like_this.append(fruit)
     return more_like_this
 
