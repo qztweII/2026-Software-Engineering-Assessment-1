@@ -173,14 +173,3 @@ def exploreMore(thing):
 
 
 # def customiseGUI():
-
-
-if __name__ == "__main__":
-    #This algorithm requires happypath
-    fruit = fruitLookup("Name")
-    if not "error" in fruit:
-        displayData(fruit)
-    else:
-        print(f"Oh no! {fruit['error']}")
-
-    compareFruits(addFruitsForCompare(fruit))
