@@ -160,7 +160,6 @@ def compareFruits(list):
 
 def exploreMore(thing):
     '''calls API for fruits of ±1 id'''
-    print("Loading...")
     global APILink
     id = thing['id']
     more_like_this = []

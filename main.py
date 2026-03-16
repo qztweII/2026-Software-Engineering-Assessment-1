@@ -17,8 +17,10 @@ while using:
             
             exploring = choices(["Yes", "No"], "Do you want to see fruit recommendations?")
             if exploring == "Yes":
-                print()
-                print(exploreMore(request))
+                print("You may be intrested in:")
+                extras = exploreMore(request)
+                for i in extras:
+                    print(i["name"])
         else:
             print(f"Oh no! {request['error']}")
     
