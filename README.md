@@ -9,4 +9,6 @@ You can:
 
 **API used:** [Fruityvice](https://fruityvice.com/) 
 ## How to use:
-Run main.py
+1. In the terminal run: `pip install -r requirements.txt` to install all the dependencies
+
+2. Run main.py
