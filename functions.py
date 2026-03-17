@@ -165,8 +165,10 @@ def exploreMore(thing):
     more_like_this = []
     for i in range(-1, 2, 2):
         fruit = fruitLookup("Name", (id + i), False)
-        if "error" in fruit:
-            fruit = fruitLookup("Name", (id + i + i), False)
+        j = 1
+        while "error" in fruit:
+            j += 1
+            fruit = fruitLookup("Name", (id + (i * j)), False)
         more_like_this.append(fruit)
     return more_like_this
 
