@@ -91,6 +91,31 @@ Screen for comparison
 ## Integration
 
 **Screenshots**
+Unfortunately, I forgot to screenshot the original events, but went to GitHub and retrieved the old commits. 
+<details>
+<summary>Calling API</summary>
+
+![First API Calling look like](md_images/Progress%20images/API%20calling.png)
+...
+![Bottom part](md_images/Progress%20images/API%20calling%201.jpg)
+
+What the first API call might have looked like. The API had a lot of fruits with 4-9g of sugar per 100g. 
+</details>
+
+<details>
+<summary>Json and making history</summary>
+
+![Making history](md_images/Progress%20images/history.jpg)
+
+The valid search history made by the user will be recorded in a json format, all in a single line, because the file is not intended to be accessed directly.
+
+![It still looks ugly](md_images/Progress%20images/history%201.jpg)
+It is still that ugly one line json format, but this time it was printed in the terminal. 
+</details>
+
+<details>
+<summary></summary>
+</details>
 
 ## Testing & Debugging
 ### Test of 15/3/2026
