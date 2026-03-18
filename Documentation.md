@@ -114,7 +114,7 @@ It is still that ugly one line json format, but this time it was printed in the 
 </details>
 
 <details>
-<summary></summary>
+<summary>Creating graphs</summary>
 </details>
 
 ## Testing & Debugging
