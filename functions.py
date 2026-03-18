@@ -164,12 +164,17 @@ def exploreMore(thing):
     id = thing['id']
     more_like_this = []
     for i in range(-1, 2, 2):
+        dontSave = False
         fruit = fruitLookup("Name", (id + i), False)
         j = 1
         while "error" in fruit:
             j += 1
             fruit = fruitLookup("Name", (id + (i * j)), False)
-        more_like_this.append(fruit)
+            if j == 4:
+                dontSave = True
+                break
+        if not dontSave:
+            more_like_this.append(fruit)
     return more_like_this
 
 
