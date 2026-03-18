@@ -91,7 +91,7 @@ Screen for comparison
 ## Integration
 
 **Screenshots**
-Unfortunately, I forgot to screenshot the original events, but went to GitHub and retrieved the old commits. 
+Unfortunately, I forgot to screenshot the original events, but went to GitHub and retrieved the old commits.  
 <details>
 <summary>Calling API</summary>
 
@@ -110,11 +110,25 @@ What the first API call might have looked like. The API had a lot of fruits with
 The valid search history made by the user will be recorded in a json format, all in a single line, because the file is not intended to be accessed directly.
 
 ![It still looks ugly](md_images/Progress%20images/history%201.jpg)
-It is still that ugly one line json format, but this time it was printed in the terminal. 
+It is still that ugly one line json format, but this time it was printed in the terminal.
+
+![Pretty now!](md_images/Progress%20images/history%202.png)
+This now lists search history in a nicer manner. Note that there are some numbers, because I found that the API also accepts number inputs (searches by id). 
 </details>
 
 <details>
 <summary>Creating graphs</summary>
+
+![Graph of banana, lemon, mango by its sugar content](md_images/Progress%20images/Graphing.png)
+Fruits can be added to compare, then graphed by a specific nutrition of user's choice
+</details>
+
+<details>
+<summary>Explore more</summary>
+
+![Explore more when searching mango](md_images/Progress%20images/Explore%20More.png)
+When searching a fruit, the user may get the names of two other fruits. They will also be prompted if they want to use the feature because this feature takes at least five seconds to load. I have not yet found a better way to do this other than to call the API multiple times. 
+
 </details>
 
 ## Testing & Debugging
