@@ -5,19 +5,24 @@ import json
 
 APILink = "https://fruityvice.com/api/fruit/"
 
-def choices(list, query, numerical=False):
-    '''Just makes inputs cleaner'''
+def choices(list, query, numerical=False, help=False):
+    '''Just makes inputs cleaner, now with a help function'''
     print()
-    for i in range(1, (len(list) + 1)):
-        print(f"[{i}] {list[i-1]}")
     while True:
         try:
+            for i in range(1, (len(list) + 1)):
+                print(f"[{i}] {list[i-1]}")
+            if not help == False:
+                print(f"[{i + 1}] Help me!!!")
             choice = int(input(query))
+            if choice == (i+1):
+                helpMe(help)
             list[choice-1]
         except ValueError:
             print("Please choose a number")
         except IndexError:
-            print("Please choose an option within the above list")
+            if choice != (i+1):
+                print("Please choose an option within the above list")
         else:
             break
         finally:
@@ -64,7 +69,7 @@ def fruitLookup(want, search=None, save=True):
     elif want == "Nutrition": 
         nutritions = ["calories", "fat", "sugar", "carbohydrates", "protein"]
         if search == None:
-            nutrition = choices(nutritions, "Choose nutrient: ")
+            nutrition = choices(nutritions, "Choose nutrient: ", help="searchChoose")
             while True:
                 try:
                     min = int(input("Minimum amount of nutrition? "))
@@ -140,7 +145,7 @@ def compareFruits(list):
     '''Graphs the fruits by nutritional value'''
     using = True
     while using:
-        choice = choices(["Calories", "Fat", "Sugar", "Carbohydrates", "Protein", "Exit"], "What nutrition do you want to compare by? ").lower() #Capitalising here just makes the UI look prettier
+        choice = choices(["Calories", "Fat", "Sugar", "Carbohydrates", "Protein", "Exit"], "What nutrition do you want to compare by? ", help="graph").lower() #Capitalising here just makes the UI look prettier
         if choice == "exit":
             break
         nutrition = []
@@ -177,6 +182,10 @@ def exploreMore(thing):
             more_like_this.append(fruit)
     return more_like_this
 
-
+def helpMe(place):
+    '''Display help at different places'''
+    f = open("help.json")
+    helpText = json.load(f)
+    print(helpText[place])
 
 # def customiseGUI():

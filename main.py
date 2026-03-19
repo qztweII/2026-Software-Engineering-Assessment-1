@@ -4,18 +4,18 @@ using = True
 compare_list = []
 wanna_compare = False #This is for the compare feature that is wired back to the search function. 
 while using:
-    mode = choices(["Search fruits", "Compare fruits", "Access History", "Exit"], "Please select:")
+    mode = choices(["Search fruits", "Compare fruits", "Access History", "Exit"], "Please select:", help="main")
     
     if mode == "Search fruits":
         request = fruitLookup(choices(["Name", "Nutrition"], "How would you like to search fruits? By:"))
         if not 'error' in request:
             displayData(request)
 
-            comparing = choices(["Yes", "No"], "Do you want to add to compare?")
+            comparing = choices(["Yes", "No"], "Do you want to add to compare?", help="addToCompare")
             if comparing == "Yes":
                 compare_list.append(request)
             
-            exploring = choices(["Yes", "No"], "Do you want to see fruit recommendations?")
+            exploring = choices(["Yes", "No"], "Do you want to see fruit recommendations?", help="fruiRecommendation")
             if exploring == "Yes":
                 print("You may be intrested in:")
                 extras = exploreMore(request)

@@ -1,0 +1,7 @@
+{
+    "main" : "Welcome to FruitsApp! \n 'Search fruits': Search up fruit data by fruit name or nutrition data \n 'Compare fruits': When you have added enough fruits to compare, you can graph the fruits by nutrition \n 'Access History' : Prints a list of your search history on this app \n 'Exit' : Exits the program",
+    "searchChoose" : "Do you want to search by name or filter by nutrition?", 
+    "addToCompare" : "Add fruit to compare list where they can be graphed ",
+    "fruitRecommendation" : "Explore more fruits on the API ",
+    "graphing" : "Make a graph to compare your fruits by a particular nutrition"
+}
