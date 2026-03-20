@@ -133,9 +133,33 @@ When searching a fruit, the user may get the names of two other fruits. They wil
 
 ## Testing & Debugging
 ### Test of 15/3/2026
-Bugs:
+I tested my own program and found several bugs. 
+
+Things to fix/improve:
 - When searching, if it does not return a value, it crashes at line 20
 - Must add in a dedicated compare fruits selection
 - Doesn't access compare fruits feature at all
+
+### Test of 20/3/2026
+A system-level test with a layman
+
+I gave my computer to my friend who currently does not take any software courses. main.py was just ran, I did not show him any documentation or readme. 
+
+After finising using main.py, I showed him the readme file
+
+Results:
+He appeared to use the UI quite easily, and there were no errors found. 
+
+The main limitations:
+- The test was done only once
+- He did not access the view history function
+- The usage pattern appears to be on happy path
+
+He does not see anything missing with the readme file. 
+
+Things to fix/improve:
+- When searching by nutrition, it was recommended that there be a range in which searches are valid
+- I also believe that all request histories should be recorded, not just the valid ones
+- Next test should involve attempts to create an error and somebody who takes software
 
 ## Maintainance
