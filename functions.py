@@ -10,18 +10,19 @@ def choices(list, query, numerical=False, help=False):
     print()
     while True:
         try:
-            for i in range(1, (len(list) + 1)):
+            for i in range(1, (len(list) + 1)): #List out all the choices
                 print(f"[{i}] {list[i-1]}")
-            if not help == False:
+            if not help == False: #List the help function
                 print(f"[{i + 1}] Help me!!!")
-            choice = int(input(query))
-            if choice == (i+1):
-                helpMe(help)
-            list[choice-1]
+            choice = int(input(query)) 
+            if choice == (i+1): #Help function is always the last choice
+                helpMe(help) 
+            list[choice-1] #Otherwise check if the choice is in the list
         except ValueError:
             print("Please choose a number")
         except IndexError:
-            if choice != (i+1):
+            if choice != (i+1): #If help is not selected
+                #I did this instead of putting an else before line 20 because I want the function to loop back after the user used the help function
                 print("Please choose an option within the above list")
         else:
             break
@@ -36,16 +37,17 @@ def saveSearchHistory(thing):
     '''Saving search history into a json file'''
     with open("history.json", "r") as f:
         lines = f.read()
-        if len(lines) == 0:
+        if len(lines) == 0: 
             first_thing = True
         else:
             first_thing = False
 
     lines = lines[1:-1]
     lines = (f"[{lines}{'' if first_thing else ','}{json.dumps(thing)}]")
-    
+    #Writing the json file, still as a single line
+
     with open("history.json", "w") as f:
-        f.write(lines)
+        f.write(lines) #Actually writing to the file
 
 def readSearchHistory():
     '''Loads the search history'''
@@ -67,10 +69,10 @@ def fruitLookup(want, search=None, save=True):
         if not "error" in fruit_data:
             fruit_data = [fruit_data]
     elif want == "Nutrition": 
-        nutritions = ["calories", "fat", "sugar", "carbohydrates", "protein"]
+        nutritions = ["calories", "fat", "sugar", "carbohydrates", "protein"] #Nutritions are hard-coded here
         if search == None:
             nutrition = choices(nutritions, "Choose nutrient: ", help="searchChoose")
-            while True:
+            while True: 
                 try:
                     min = int(input("Minimum amount of nutrition? "))
                 except:
@@ -84,9 +86,8 @@ def fruitLookup(want, search=None, save=True):
                     print("Please choose a number")
                 else:
                     break
-        test = f"{APILink}{nutrition}?min={min}&max={max}"
-        fruit_data = requests.get(test)
-        fruit_data = fruit_data.json()
+        fruit_data = requests.get(f"{APILink}{nutrition}?min={min}&max={max}")
+        fruit_data = fruit_data.json() #Turn to json
     if not "error" in fruit_data: 
         if len(fruit_data) > 1: #If a list of fruits come in
             names = []
@@ -104,6 +105,7 @@ def fruitLookup(want, search=None, save=True):
             else:
                 saveSearchHistory({"type":"Name", "name":fruit})
         
+        #Remove stuff I don't need
         del fruit_data["family"]
         del fruit_data["order"]
         del fruit_data["genus"]
@@ -155,7 +157,7 @@ def compareFruits(list):
         for j in list:
             fruits.append(j["name"])
 
-        #AAAAAAAAAA GRAPHING!!!!!! AAAAAAAAAAAA
+        #Graphing part
         plt.bar(fruits, nutrition)
         plt.title(f"Fruits by {choice}")
         plt.xlabel("Fruits")
@@ -185,7 +187,7 @@ def exploreMore(thing):
 def helpMe(place):
     '''Display help at different places'''
     f = open("help.json")
-    helpText = json.load(f)
+    helpText = json.load(f) #edit help strings at help.json
     print(helpText[place])
 
 # def customiseGUI():
