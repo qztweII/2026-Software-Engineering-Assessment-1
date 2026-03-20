@@ -125,24 +125,6 @@ def displayData(thing):
             print(f"{i.capitalize()} : {thing[i]}")
 
 
-def addFruitsForCompare(fruit=None):
-    '''Function for user to add fruits to compare them. Deprecated'''
-    list_of_fruits = []
-    if fruit != None:
-        list_of_fruits.append(fruit)
-    using = True
-    while using:
-        fruit = fruitLookup(choices(["Name", "Nutrition"], "How do you want to search your next fruit? "))
-        if not "error" in fruit:
-            list_of_fruits.append(fruit)
-            print(fruit["name"])
-        else:
-            print(f"Oh no! {fruit['error']}")
-        if choices(["Yes", "No"], "Do you want to keep adding fruits for compare? ") == "No":
-            using = False
-    return list_of_fruits #This should return a list of dictionaries. 
-
-
 def compareFruits(list):
     '''Graphs the fruits by nutritional value'''
     using = True
