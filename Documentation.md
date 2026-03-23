@@ -179,9 +179,8 @@ Result: Program broken
 - She also attempted to search multiple fruits when using the search function
 
 Things to fix/improve:
-- Go back to choices function and 
 - Ensure all help functions have a valid help key
-- I believe I should put the query to the top, and then where the query was, specifically say 'Enter a number: '
+- I believe I should put the query to the top, and then where the query was, specifically say 'Enter a number: ' (note the space) to make it more intuitive
 
 
 ## Maintainance
