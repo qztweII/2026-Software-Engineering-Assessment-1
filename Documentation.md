@@ -180,7 +180,7 @@ Result: Program broken
 
 Things to fix/improve:
 - Ensure all help functions have a valid help key
-- I believe I should put the query to the top, and then where the query was, specifically say 'Enter a number: ' (note the space) to make it more intuitive
+- I believe I should put the query to the top, and then where the query was, specifically say 'Enter a number: ' (note the space) to make it more intuitive 
 
 
 ## Maintainance
