@@ -15,9 +15,9 @@ while using:
             if comparing == "Yes":
                 compare_list.append(request)
             
-            exploring = choices(["Yes", "No"], "Do you want to see fruit recommendations?", help="fruiRecommendation")
+            exploring = choices(["Yes", "No"], "Do you want to see fruit recommendations?", help="fruitRecommendation")
             if exploring == "Yes":
-                print("You may be intrested in:")
+                print("You may be interested in:")
                 extras = exploreMore(request)
                 for i in extras:
                     print(i["name"])

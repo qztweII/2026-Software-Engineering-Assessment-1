@@ -10,11 +10,12 @@ def choices(list, query, numerical=False, help=False):
     print()
     while True:
         try:
+            print(query)
             for i in range(1, (len(list) + 1)): #List out all the choices
                 print(f"[{i}] {list[i-1]}")
             if not help == False: #List the help function
                 print(f"[{i + 1}] Help me!!!")
-            choice = int(input(query)) 
+            choice = int(input("Please choose a number: ")) #The actual asking
             if choice == (i+1): #Help function is always the last choice
                 helpMe(help) 
             list[choice-1] #Otherwise check if the choice is in the list
