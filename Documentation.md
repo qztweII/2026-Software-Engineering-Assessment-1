@@ -162,4 +162,26 @@ Things to fix/improve:
 - I also believe that all request histories should be recorded, not just the valid ones
 - Next test should involve attempts to create an error and somebody who takes software
 
+### Test of 23/3/2026
+System level stress test using classmate. 
+
+I gave my computer to my classmate and specifically told her to attempt to break the program.  
+
+**Test 1:**
+Result: Program broken
+> Help function broke when using help function at fruit recommendation 
+- She commented on the formatting when getting presented choices, mentioning that there should be a space after the query
+- This happened: <details> <summary> </summary> 
+=
+![A stack of Do you want to add to compare?1](md_images/Progress%20images/testing.png)
+</details>
+
+- She also attempted to search multiple fruits when using the search function
+
+Things to fix/improve:
+- Go back to choices function and 
+- Ensure all help functions have a valid help key
+- I believe I should put the query to the top, and then where the query was, specifically say 'Enter a number: '
+
+
 ## Maintainance
