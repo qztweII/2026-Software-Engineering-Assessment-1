@@ -188,4 +188,11 @@ Things to fix/improve:
 - I believe I should put the query to the top, and then where the query was, specifically say 'Enter a number: ' (note the space) to make it more intuitive 
 
 
-## Maintainance
+## Maintenance
+**Possible future improvements**: One feature that could definitely be added was the graphical user interface. Unfortunately, there was inadaquate time to create one. 
+
+**Potential bugs**: Some bugs may be found through normal use through unexpected inputs not covered by tests. 
+
+Otherwise, the bugs would be created when the API updates itself in which I must update my program to keep it running. 
+
+**System maintenence**: The only real plan for maintenence would be users sending feedback and bug reports through my email (or in person), and I would fix them ASAP. 
