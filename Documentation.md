@@ -103,6 +103,8 @@ Unfortunately, I forgot to screenshot the original events, but went to GitHub an
 ![Bottom part](md_images/Progress%20images/API%20calling%201.jpg)
 
 What the first API call might have looked like. The API had a lot of fruits with 4-9g of sugar per 100g.
+
+If the program returned multiple results, I made the user choose one because it is simpler to handle. 
 </details>
 
 <details>
@@ -113,7 +115,7 @@ What the first API call might have looked like. The API had a lot of fruits with
 The valid search history made by the user will be recorded in a json format, all in a single line, because the file is not intended to be accessed directly.
 
 ![It still looks ugly](md_images/Progress%20images/history%201.jpg)
-It is still that ugly one line json format, but this time it was printed in the terminal.
+It is still that ugly one line json format, but this time it was printed in the terminal. Needs improvement
 
 ![Pretty now!](md_images/Progress%20images/history%202.png)
 This now lists search history in a nicer manner. Note that there are some numbers, because I found that the API also accepts number inputs (searches by id). 
@@ -123,7 +125,7 @@ This now lists search history in a nicer manner. Note that there are some number
 <summary>Creating graphs</summary>
 
 ![Graph of banana, lemon, mango by its sugar content](md_images/Progress%20images/Graphing.png)
-Fruits can be added to compare, then graphed by a specific nutrition of user's choice
+Fruits can be added to compare, then graphed by a specific nutrition of user's choice. It is very basic, but I don't know what to add onto it that would make it better. 
 </details>
 
 <details>
