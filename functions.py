@@ -43,9 +43,10 @@ def saveSearchHistory(thing):
         else:
             first_thing = False
 
-    lines = lines[1:-1]
-    lines = (f"[{lines}{'' if first_thing else ','}{json.dumps(thing)}]")
+    lines = lines[1:-1] #Remove the square brackets at the end 
+    
     #Writing the json file, still as a single line
+    lines = (f"[{lines}{'' if first_thing else ','}{json.dumps(thing)}]")
 
     with open("history.json", "w") as f:
         f.write(lines) #Actually writing to the file
@@ -132,7 +133,8 @@ def compareFruits(list):
     '''Graphs the fruits by nutritional value'''
     using = True
     while using:
-        choice = choices(["Calories", "Fat", "Sugar", "Carbohydrates", "Protein", "Exit"], "What nutrition do you want to compare by? ", help="graph").lower() #Capitalising here just makes the UI look prettier
+        #Capitalising here just makes the UI look prettier, but it gets lowercased
+        choice = choices(["Calories", "Fat", "Sugar", "Carbohydrates", "Protein", "Exit"], "What nutrition do you want to compare by? ", help="graph").lower() 
         if choice == "exit":
             break
         nutrition = []
@@ -155,14 +157,14 @@ def exploreMore(thing):
     global APILink
     id = thing['id']
     more_like_this = []
-    for i in range(-1, 2, 2):
-        dontSave = False
+    for i in range(-1, 2, 2): #i will be -1 then 1
+        dontSave = False #If there is an error, it will not append to more_like_this that will get returned
         fruit = fruitLookup("Name", (id + i), False)
         j = 1
         while "error" in fruit:
             j += 1
             fruit = fruitLookup("Name", (id + (i * j)), False)
-            if j == 4:
+            if j == 4: #So the program won't fall into an infinite loop 
                 dontSave = True
                 break
         if not dontSave:
