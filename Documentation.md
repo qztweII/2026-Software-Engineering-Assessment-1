@@ -34,10 +34,13 @@
 Actor: User (Fruits enthusiast)
 Preconditions: Internet access, API with fruits data available
 1. Search fruits
-    - User inputs fruit name or nutritional value range; system retrieves data that matches user input; user selects one choice from a range of fruits (if required); display data
+    - User inputs fruit name or nutritional value range; system retrieves data that matches user input; user selects one choice from a range of fruits (if required); display data, save to history file
 2. Add to compare
+    - User makes choice of whether to add to compare or not; if so, store the fruit data in a list. 
 3. Graph the data
-4. \>w<
+    - User makes choice of what nutrition to graph by; each fruit gets graphed according to nutrition; displays the graph
+4. Access history
+    - User makes choice to access search history; system retrieves data from history file; display the data
 
 # Design
 ## Structure Chart
