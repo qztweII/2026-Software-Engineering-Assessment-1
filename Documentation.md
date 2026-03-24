@@ -30,14 +30,14 @@
 - Rounded corners GUI
 - Data loads and is shown within the second plus request time
 
-## Design
-### Structure Chart
+# Design
+## Structure Chart
 <details>
 <summary>Structure chart</summary>
 ![Structure Chart](md_images/Structure%20chart.jpg)
 </details>
 
-### Flowchart
+## Flowchart
 
 [Flowchart link (recommended)](https://miro.com/app/board/uXjVG2q2jSU=/?share_link_id=23078941805)
 
@@ -50,14 +50,14 @@
 
 
 
-### Gantt Charts
+## Gantt Charts
 <details>
 <summary>Gantt chart</summary>
 
 ![Gantt Chart](md_images/GanttChart.png)
 </details>
 
-### Data Table
+## Data Table
 <details>
 <summary>Data table</summary>
 
@@ -73,7 +73,7 @@
 |nutritions.protein      |Number|8 B          |Protein per 100g (g)              |0.3       |
 </details>
 
-### GUI designs (unimplemented for now)
+## GUI designs (unimplemented for now)
 <details>
 <summary>GUI designs</summary>
 
@@ -88,7 +88,7 @@ Screen for comparison
 </details>
 
 
-## Integration
+# Integration
 
 **Screenshots**
 Unfortunately, I forgot to screenshot the original events, but went to GitHub and retrieved the old commits.  
@@ -99,7 +99,7 @@ Unfortunately, I forgot to screenshot the original events, but went to GitHub an
 ...
 ![Bottom part](md_images/Progress%20images/API%20calling%201.jpg)
 
-What the first API call might have looked like. The API had a lot of fruits with 4-9g of sugar per 100g. 
+What the first API call might have looked like. The API had a lot of fruits with 4-9g of sugar per 100g.
 </details>
 
 <details>
