@@ -176,7 +176,7 @@ Things to fix/improve:
 - I also believe that all request histories should be recorded, not just the valid ones
 - Next test should involve attempts to create an error and somebody who takes software
 
-### Test of 23/3/2026
+### Test of 23/3/2026, 25/3/2026
 System level stress test using classmate. 
 
 I gave my computer to my classmate and specifically told her to attempt to break the program.  
@@ -195,6 +195,14 @@ Result: Program broken
 Things to fix/improve:
 - Ensure all help functions have a valid help key
 - I believe I should put the query to the top, and then where the query was, specifically say 'Enter a number: ' (note the space) to make it more intuitive 
+
+**Test 2:**
+Result: Program broken
+> Unable to handle empty requests
+
+- She also searched negative values for nutritions, although I believe the app is still handling the request correctly. <details><summary></summary>
+![Negative values](md_images/Progress%20images/searching%20negative%20values.png)
+</details>
 
 
 ## Maintenance
