@@ -58,7 +58,7 @@ def readSearchHistory():
     return history
 
 def fruitLookup(want, search=None, save=True):
-    '''Look up fruits by name or filtering and choosing by nutritional value. Choose "Name" or "Nutrition". '''
+    '''Look up fruits by name or filtering and choosing by nutritional value. Choose "Name" or "Nutrition" for want. '''
     global APILink
     if want == "Name": 
         if search == None:
@@ -67,10 +67,10 @@ def fruitLookup(want, search=None, save=True):
                 fruit = "pitahaya"
         else:
             fruit = search
-        fruit_data = requests.get(f"{APILink}{fruit}")
+        fruit_data = requests.get(f"{APILink}{fruit}") #Line that actually gets the data
         fruit_data = fruit_data.json()
-        if not "error" in fruit_data:
-            fruit_data = [fruit_data]
+        if not "error" in fruit_data: #API returns multiple fruits as a list or dictionary, but errors are always dictionaries
+            fruit_data = [fruit_data] #All errors are dictionaries and all fruit data are in lists
     elif want == "Nutrition": 
         nutritions = ["calories", "fat", "sugar", "carbohydrates", "protein"] #Nutritions are hard-coded here
         if search == None:
