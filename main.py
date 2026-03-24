@@ -1,8 +1,7 @@
 from functions import *
 print("Welcome to FruitsApp!")
 using = True
-compare_list = []
-wanna_compare = False #This is for the compare feature that is wired back to the search function. 
+compare_list = [] 
 while using:
     mode = choices(["Search fruits", "Compare fruits", "Access History", "Exit"], "Please select:", help="main")
     
