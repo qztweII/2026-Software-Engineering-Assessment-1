@@ -63,6 +63,8 @@ def fruitLookup(want, search=None, save=True):
     if want == "Name": 
         if search == None:
             fruit = input("Search fruits: ")
+            if len(fruit) == 0: #Empty requests default to pitahaya (dragonfruit)
+                fruit = "pitahaya"
         else:
             fruit = search
         fruit_data = requests.get(f"{APILink}{fruit}")
