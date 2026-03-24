@@ -89,6 +89,9 @@ Screen for comparison
 
 
 # Integration
+Currently, the program meets all must have requirements and some should have requirements, therefore it does its role extremely well, any improvements will mostly come from tester/user feedback. 
+
+Currently to improve: Check testing & debugging
 
 **Screenshots**
 Unfortunately, I forgot to screenshot the original events, but went to GitHub and retrieved the old commits.  
