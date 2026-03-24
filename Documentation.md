@@ -30,6 +30,15 @@
 - Rounded corners GUI
 - Data loads and is shown within the second plus request time
 
+### Use cases
+Actor: User (Fruits enthusiast)
+Preconditions: Internet access, API with fruits data available
+1. Search fruits
+    - User inputs fruit name or nutritional value range; system retrieves data that matches user input; user selects one choice from a range of fruits (if required); display data
+2. Add to compare
+3. Graph the data
+4. \>w<
+
 # Design
 ## Structure Chart
 <details>
