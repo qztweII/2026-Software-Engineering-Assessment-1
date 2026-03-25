@@ -213,10 +213,12 @@ Result: Program broken
 
 I can also figure out how to make the explore more feature more efficient, i am thinking keep a log of id numbers that don't have a fruit in it so it does not constantly check the same empty id numbers. 
 
+I have also noted in my test & debugging that one of my testers attempted to search multiple fruits at once. I could implement that in the future. 
+
 **Potential bugs**: Some bugs may be found through normal use through unexpected inputs not covered by tests, although I believe the tests were quite thorough. 
 
 Majority of the bugs would probably come with any new features I create
 
 Alternatively, the bugs would be created when the API updates itself in which I must update my program to keep it running. 
 
-**System maintenence**: The only real plan for maintenence would be users sending feedback and bug reports through my email (or in person), and I would fix them ASAP. 
+**System maintenence**: The only real plan for maintenence would be users sending feedback and bug reports through my email (or in person), and I would fix the app ASAP. 
